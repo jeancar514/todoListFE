@@ -20,18 +20,18 @@
 
     <ng-container matColumnDef="task">
       <th mat-header-cell *matHeaderCellDef> Tarea </th>
-      <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+      <td mat-cell *matCellDef="let element" [ngClass]="element.completed ? 'textFinalizada' : 'textEnCurso'"> {{element.description}} </td>
     </ng-container>
 
     <ng-container matColumnDef="date">
       <th mat-header-cell *matHeaderCellDef> Fecha </th>
-      <td mat-cell *matCellDef="let element"> {{element.date|date}} </td>
+      <td mat-cell *matCellDef="let element" [ngClass]="element.completed ? 'textFinalizada' : 'textEnCurso'" > {{element.date|date}} </td>
     </ng-container>
 
     <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef></th>
       <td mat-cell *matCellDef="let element" class="actions">
-        <button mat-button color="primary" (click)="maskCompletedTask(element.id, element.completed)">{{element.completed ? "Finalizada" : "En Curso"}}</button>
+        <button mat-button color="primary" (click)="maskCompletedTask(element.id, element.completed)" [ngClass]="element.completed ? 'buttomFinalizada' : 'buttomEnCurso'">{{element.completed ? "Finalizada" : "En Curso"}}</button>
         <button mat-raised-button color="primary" (click)="deleteTask(element.id)">
           <mat-icon>delete</mat-icon>
           Borrar
