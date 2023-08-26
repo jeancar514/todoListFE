@@ -12,6 +12,13 @@
         </mat-label>
         <input formControlName="description" matInput type="text">
       </mat-form-field>
+      <mat-form-field>
+        <mat-label>Fecha de vencimiento</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="date">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
     </div>
 
     <div class="containerButton">

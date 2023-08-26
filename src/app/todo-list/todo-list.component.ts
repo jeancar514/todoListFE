@@ -46,8 +46,6 @@ export class TodoListComponent implements OnInit, OnDestroy{
   searchFilter(searchData:any){
 
     let filter = (searchData != "") ? this.tasks.filter(task => task.description.includes(searchData))  : this.tasks;
-    console.log(filter)
-    console.log(searchData)
     this.dataSource = new MatTableDataSource<Task>(filter);
   }
 
@@ -68,7 +66,6 @@ export class TodoListComponent implements OnInit, OnDestroy{
     .pipe(takeUntil(this.onDestroy$))
     .subscribe(
       response =>{
-        console.log(response);
         this.getTaskall()
       }
     )
@@ -76,7 +73,6 @@ export class TodoListComponent implements OnInit, OnDestroy{
 
   maskCompletedTask(id:number,completed:boolean){
     let requestBodyUpdateComplete:RequestBodyComplete = {id:id,completed:!completed};
-    console.log(requestBodyUpdateComplete)
     this.todoListService.maskCompletedTask(requestBodyUpdateComplete)
     .pipe(takeUntil(this.onDestroy$))
     .subscribe(

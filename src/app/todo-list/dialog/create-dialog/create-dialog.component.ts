@@ -17,6 +17,7 @@ export class CreateDialogComponent {
   ) {
     this.formGroup = new FormGroup({
       description: new FormControl('', Validators.required),
+      date: new FormControl('', Validators.required),
     })
   }
 
@@ -28,7 +29,7 @@ export class CreateDialogComponent {
     if(this.formGroup.controls['description'].value !== "" && this.formGroup.controls['description'].value !== null ){
       let task:Task = {
         description: this.formGroup.controls['description'].value,
-        date: new Date(),
+        date: this.formGroup.controls['date'].value,
         completed:false,
       }
       this.dialogRef.close({task: task});
