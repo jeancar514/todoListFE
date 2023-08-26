@@ -1,0 +1,20 @@
+.todoList{
+    margin: 10px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    font-size: 36px;
+    font-weight: bold;
+    background: linear-gradient(to bottom, #00ffea, #2b2b2b);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.buttonDelete{
+    background: red !important;
+}

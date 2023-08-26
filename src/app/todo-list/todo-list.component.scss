@@ -1,0 +1,32 @@
+
+.actions button:first-child {
+  margin-right: 20px;
+}
+
+.actions button:nth-child(2) {
+  border:2px solid rgb(233, 40, 40);
+  background:transparent;
+  color: rgb(233, 40, 40);
+}
+
+.form{
+  display: flex;
+  justify-content: space-around;
+  align-items: top;
+}
+
+.form > *{
+  margin:20px 10px;
+}
+
+.form button {
+  height:56px;
+  font-size: 3em;
+}
+.mat-icon{
+  margin:0px !important;
+}
+
+.mat-mdc-form-field-subscript-wrapper {
+  display: none !important;
+}

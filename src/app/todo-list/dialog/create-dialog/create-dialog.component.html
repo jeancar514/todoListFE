@@ -1,0 +1,23 @@
+<form  [formGroup]="formGroup">
+  <div class="formContainer">
+
+    <h2 >Craar una Tarea</h2>
+
+    <div class="containerInput">
+
+      <mat-form-field appearance="fill" >
+        <mat-label>
+          <mat-icon>create</mat-icon>
+          Descripción
+        </mat-label>
+        <input formControlName="description" matInput type="text">
+      </mat-form-field>
+    </div>
+
+    <div class="containerButton">
+      <button (click)="save()" color="primary" mat-raised-button>Guardar</button>
+      <button (click)="cancel()" color="primary" mat-raised-button>Cancelar</button>
+    </div>
+
+  </div>
+</form>
