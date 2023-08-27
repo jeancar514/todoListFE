@@ -24,7 +24,7 @@
     </ng-container>
 
     <ng-container matColumnDef="date">
-      <th mat-header-cell *matHeaderCellDef> Fecha </th>
+      <th mat-header-cell *matHeaderCellDef> Fecha de vencimiento</th>
       <td mat-cell *matCellDef="let element" [ngClass]="element.completed ? 'textFinalizada' : ''" > {{element.date|date}} </td>
     </ng-container>
 

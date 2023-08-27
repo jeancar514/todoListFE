@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {  MatDialogRef } from '@angular/material/dialog';
 import { Task } from '../../models/task';
+import { DateAdapter, MAT_DATE_LOCALE } from '@angular/material/core';
 
 @Component({
   selector: 'app-create-dialog',
@@ -11,9 +12,12 @@ import { Task } from '../../models/task';
 export class CreateDialogComponent {
   formGroup: FormGroup;
   task!: Task;
+  minDate:Date = new Date();
 
   constructor(
     public dialogRef: MatDialogRef<CreateDialogComponent>,
+    private _adapter: DateAdapter<any>,
+    @Inject(MAT_DATE_LOCALE) private _locale: string,
   ) {
     this.formGroup = new FormGroup({
       description: new FormControl('', Validators.required),
@@ -22,7 +26,12 @@ export class CreateDialogComponent {
   }
 
   ngOnInit() {
+    this.dayMonthYear()
+  }
 
+  dayMonthYear(){
+    this._locale = 'fr';
+    this._adapter.setLocale(this._locale);
   }
 
   save() {
