@@ -21,10 +21,13 @@
 
 .form button {
   height:56px;
-  font-size: 3em;
+  font-size: 1.5em;
 }
 .mat-icon{
   margin:0px !important;
+}
+.form button .mat-icon {
+  margin-right: 5px !important;
 }
 
 .mat-mdc-form-field-subscript-wrapper {
